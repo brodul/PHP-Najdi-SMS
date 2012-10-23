@@ -1,0 +1,18 @@
+Purpose: 
+	Sending SMS via Najdi.si Free SMS
+
+Description: 
+	Script logs in using your username and password for https://id.najdi.si and then it sends an SMS to a mobile phone number. 
+	There is a 160 character limit per message and daily limit of 40 sent messages.
+	The script tries to limit the number of requests to a page and tries to hold on to the session as long as possible. 
+	The session cookie is stored in a /tmp/folder for later use, if the script restarts. 
+	Once instantiated, object can be reused for sending a number of SMS messages. 
+	If a new object is instantiated, it will prefer to use a stored session.
+
+
+Example usage:
+
+<?php
+$sms = new sms();
+$sms->send('090666666','one does not simply send an SMS');
+?>
